@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- ⭐ ใช้ FrameLayout ห่อพื้นหลัง + UI -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- ⭐ พื้นหลัง centerCrop (ไม่โดนบีบ) -->
+        <ImageView
+            android:id="@+id/bgImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_gacha"
+            android:scaleType="centerCrop" />
+
+        <!-- ⭐ UI ทั้งหมด -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- TOP BAR -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/topbar_frame"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_proflie"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GOALSPIN"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/irishgrover_regular" />
+
+                <TextView
+                    android:id="@+id/txtTicketCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp" />
+
+                <ImageView
+                    android:id="@+id/imgTicket"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_ticket"
+                    android:layout_toStartOf="@id/txtTicketCount"
+                    android:layout_marginEnd="4dp" />
+            </RelativeLayout>
+
+            <!-- Label GACHA -->
+            <TextView
+                android:id="@+id/txtGacha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GACHA"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/irishgrover_regular" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- ดันปุ่มลงล่างของจอ -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- ปุ่ม SPIN x1 -->
+            <FrameLayout
+                android:id="@+id/btnSpin1"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btn_purple"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/txtSpin1Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="SPIN x 1"
+                    android:fontFamily="@font/irishgrover_regular"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+            </FrameLayout>
+
+            <!-- ปุ่ม SPIN x4 -->
+            <FrameLayout
+                android:id="@+id/btnSpin4"
+                android:layout_width="280dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="40dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btn_purple"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/txtSpin4Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="SPIN x 4"
+                    android:fontFamily="@font/irishgrover_regular"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
